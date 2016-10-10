@@ -47,6 +47,12 @@ bindkey ^T tetris
 autoload colors && colors
 
 # Setup prompt
+# Hyper doesn't show italic symbol for master correctly, thus choose another one for
+# the time being...
+# => https://github.com/michaeldfallen/git-radar/blob/c67d6bcd88c9073bc072af1cb13d7bfa85cbbbb0/radar-base.sh#L97
+# => https://github.com/zeit/hyper/issues/368
+# => https://github.com/zeit/hyper/pull/214
+export GIT_RADAR_MASTER_SYMBOL="%{$reset_color%}M%{$reset_color%}"
 export PROMPT=%n@%m:'%{$fg[cyan]%}${PWD/$HOME/~}%{$reset_color%}'"\$(git-radar --zsh --fetch)"$'\n%(?.\xe2\x9a\xa1\xef\xb8\x8f.\xf0\x9f\x92\xa9 ) '
 
 precmd() {
