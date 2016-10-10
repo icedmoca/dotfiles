@@ -61,7 +61,10 @@ module.exports = {
     shellArgs: ['--login'],
 
     // for environment variables
-    env: {},
+    env: {
+      LANG: "de_DE.UTF-8",
+      LC_ALL: "de_DE.UTF-8"
+    },
 
     // set to false for no bell
     bell: 'SOUND',
