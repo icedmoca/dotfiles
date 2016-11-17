@@ -5,14 +5,7 @@ export PATH="./bin:/usr/local/bin:/usr/local/sbin:$ZSH/bin:$PATH"
 # Your project folder that we can `c [tab]` to
 export PROJECTS=~/Workspace
 
-export EDITOR="mate -w"
-
-# Stash your environment variables in ~/.localrc. This means they'll stay out
-# of your main dotfiles repository (which may be public, like this one), but
-# you'll have access to them in your scripts.
-if [[ -a ~/.localrc ]]; then
-  source ~/.localrc
-fi
+export EDITOR="vim"
 
 # All of our zsh files
 typeset -U config_files
@@ -33,6 +26,15 @@ for file in ${(M)config_files:#*/completion.zsh}; do
 done
 
 unset config_files
+
+# Stash your environment variables in ~/.localrc. This means they'll stay out
+# of your main dotfiles repository (which may be public, like this one), but
+# you'll have access to them in your scripts.
+# Include *after* all other configuration has been loaded so I can override
+# certain options easily.
+if [[ -a ~/.localrc ]]; then
+  source ~/.localrc
+fi
 
 # Quote pasted URLs
 autoload -U url-quote-magic
