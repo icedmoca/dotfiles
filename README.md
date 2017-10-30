@@ -18,3 +18,4 @@ symlinked. For example: `~/.dotfiles/git/gitconfig.symlink` gets symlinked to
 * [Mathias Bynens](https://github.com/mathiasbynens/dotfiles)
 * [Zach Holman](https://github.com/holman/dotfiles)
 * [Wynn Netherland](https://github.com/pengwynn/dotfiles)
+./
